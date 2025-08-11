@@ -94,10 +94,10 @@ cd /directory/where/this/saved/LTR_FINDER_parallel
 grep -w "LTR_retrotransposon" wheat.fasta.finder.combine.gff3 > ltr_lai_wheat.gff3
 
 # Total LTR length (sum of feature lengths)
-awk '{sum += ($5 - $4)} END {print sum}' ltr_lai_sumai3.gff3
+awk '{sum += ($5 - $4)} END {print sum}' ltr_lai_wheat.gff3
 
 # Per-chromosome LTR length
-awk '{len[$1] += ($5 - $4)} END {for (c in len) print c, len[c]}' ltr_lai_sumai3.gff3 | sort -k1,1V
+awk '{len[$1] += ($5 - $4)} END {for (c in len) print c, len[c]}' ltr_lai_wheat.gff3 | sort -k1,1V
 ```
 
 Maintainer:
