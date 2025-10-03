@@ -77,7 +77,7 @@ END {
         bin_end = bin_start + window
         print chr, bin_start, bin_end, density[key]
     }
-}' wheat_ltr_retrotransposon.gff3 > wheat_ltr_density_circos.txt
+}' ltr-wheat.gff3 > wheat_ltr_density_circos.txt
 
 # Rename chr* to ta* (e.g., chr1A -> ta1A)
 sed -E 's/chr([1-7][ABD])/ta\1/' wheat_ltr_density_circos.txt > wheat_ltr_density_circos_renamed.txt
