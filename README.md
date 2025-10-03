@@ -77,13 +77,13 @@ END {
         bin_end = bin_start + window
         print chr, bin_start, bin_end, density[key]
     }
-}' ltr-wheat.gff3 > wheat_ltr_density_circos.txt
+}' ltr-wheat.gff3 > ltr-wheat-density-circos.txt
 
 # Rename chr* to ta* (e.g., chr1A -> ta1A)
-sed -E 's/chr([1-7][ABD])/ta\1/' wheat_ltr_density_circos.txt > wheat_ltr_density_circos_renamed.txt
+sed -E 's/chr([1-7][ABD])/ta\1/' ltr-wheat-density-circos.txt > ltr-wheat-density-circos-renamed.txt
 
 # Get min/max density
-awk 'BEGIN {max=0; min=1e18} {if ($4>max) max=$4; if ($4<min) min=$4} END {print "Max Density:", max; print "Min Density:", min}' wheat_ltr_density_circos_renamed.txt
+awk 'BEGIN {max=0; min=1e18} {if ($4>max) max=$4; if ($4<min) min=$4} END {print "Max Density:", max; print "Min Density:", min}' ltr-wheat-density-circos-renamed.txt
 ```
 
 ## 5) LTR-Length Summaries (LAI-like ratio)
